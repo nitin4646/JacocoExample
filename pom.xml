@@ -3,13 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   
-    <pluginRepositories>
-    <pluginRepository>
-      <id>apache.snapshots</id>
-      <url>https://repository.apache.org/snapshots/</url>
-    </pluginRepository>
-  </pluginRepositories>
-  
+    
   <groupId>com.training.example</groupId>
   <artifactId>JacocoExample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
