@@ -33,7 +33,18 @@
     </pluginRepository>
   </pluginRepositories>
   <build>
+    <pluginManagement>
      <plugins>
+       <plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+      <!-- Use the SNAPSHOT version -->
+      <version>3.0.0-SNAPSHOT</version>
+      <configuration>
+        <!-- Activate the use of TCP to transmit events to the plugin -->
+        <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
+      </configuration>
+    </plugin>
         <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
@@ -53,17 +64,7 @@
         </execution>
     </executions>
   	</plugin>
-       <plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-surefire-plugin</artifactId>
-      <!-- Use the SNAPSHOT version -->
-      <version>3.0.0-SNAPSHOT</version>
-      <configuration>
-        <!-- Activate the use of TCP to transmit events to the plugin -->
-        <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
-      </configuration>
-    </plugin>
-    </plugins>
+        </plugins>
           
     
   </build>
