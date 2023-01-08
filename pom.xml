@@ -2,6 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  
+    <pluginRepositories>
+    <pluginRepository>
+      <id>apache.snapshots</id>
+      <url>https://repository.apache.org/snapshots/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  
   <groupId>com.training.example</groupId>
   <artifactId>JacocoExample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -48,11 +56,13 @@
   	</plugin>
        <plugin>
 <groupId>org.apache.maven.plugins</groupId>
- <artifactId>maven-surefire-plugin</artifactId>
- <version>3.0.0-M5</version>
-    <configuration>
-        <testFailureIgnore>true</testFailureIgnore>
-    </configuration>
+<artifactId>maven-surefire-plugin</artifactId>
+      <!-- Use the SNAPSHOT version -->
+      <version>3.0.0-SNAPSHOT</version>
+      <configuration>
+        <!-- Activate the use of TCP to transmit events to the plugin -->
+        <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
+      </configuration>
     </plugin>
     </plugins>
           
